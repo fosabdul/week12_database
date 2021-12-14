@@ -17,7 +17,7 @@ export default {
     },
     
     updateStudent(student) { //
-        // create URL in the form /api/students/1 
+        // create URL in the form /api/students1 or each student list ex: student 1d 1 and id 2 
         return axios.patch(`${base_url}/${student.id}`, student).then(response => {
             return response.data
         })

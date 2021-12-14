@@ -1,7 +1,5 @@
-let { Sequelize, DataTypes } = require('sequelize')// 
+let { Sequelize, DataTypes } = require('sequelize')
 
-
-// this will figure out which one is running whether is develper or production
 let env = process.env.NODE_ENV || 'development'
 // if app is running at Heroku, Heroku will have set an environment 
 // variable called NODE_ENV which will have the value 'production'
@@ -12,7 +10,7 @@ let env = process.env.NODE_ENV || 'development'
 
 let config = require(__dirname + '/../config.json')[env]
 
-let db = {} // database 
+let db = {}
 
 let sequelize 
 

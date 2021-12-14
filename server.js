@@ -5,13 +5,14 @@ let path = require('path')
 // Create web application
 let app = express() 
 
-let vueClientPath = path.join(__dirname, 'student-sign-in-client', 'dist')
+let vueClientPath = path.join(__dirname, 'student_sign', 'dist')
 app.use(express.static(vueClientPath))
 
 // be able to handle JSON requests, convert data to JavaScript
 app.use(express.json())
 
 app.use('/api', api_routes) // this will handle the request and returns a response 
+
 
 app.use(function(req, res, next) {
     // respond with a 404 to any other requests

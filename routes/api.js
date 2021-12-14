@@ -19,9 +19,9 @@ router.post('/students', function(req, res, next){ // create a
     }).catch( err => {
         // handle user errors, e.g. missing starID or name
         if ( err instanceof db.Sequelize.ValidationError ) {
-            // respond with 400 Bad Request error code, include error messages
+            // respond with 400 Bad Request eror code, include error messages
             let messages = err.errors.map( e => e.message )
-            return res.status(400).json(messages) /// json form
+            return res.status(400).json(messages) /// return in json form
         } 
 
         // otherwise, something unexpected has gone wrong, pass to error hander in server.js
@@ -32,7 +32,7 @@ router.post('/students', function(req, res, next){ // create a
 router.patch('/students/:id', function(req, res, next){ // .patch is to update 
     // if request is to /students/100 
     // studentID will be 100 
-    let studentID = req.params.id
+    let studentID = req.params.id // get student id 
     let updatedStudent = req.body 
     Student.update( updatedStudent, { where: { id: studentID } } )
         .then( (rowsModified) => {
@@ -67,7 +67,7 @@ router.delete('/students/:id', function(req, res, next){ // delete the student w
     Student.destroy( {where: { id: studentID } } ) // delete in the database
         .then( (rowsDeleted) => {
             if (rowsDeleted == 1) {
-                return res.send('ok') // say it is been deleted
+                return res.send('ok') // says it is been deleted
             } else {
                 return res.status(404).json(['Not Found'])
             }

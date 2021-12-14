@@ -36,7 +36,7 @@ export default {
     // load all students - make request to API
     this.updateStudents()
   },
-  methods: {
+  methods: { // gets all updated students 
     updateStudents() {
       this.$student_api.getAllStudents().then( students => {
         this.students = students
@@ -45,9 +45,9 @@ export default {
         alert('Sorry, unable to fetch student list')
       })
     },
-    newStudentAdded(student) {
+    newStudentAdded(student) { //call from the student service /if the add it 
       this.$student_api.addStudent(student).then( () => {
-        this.updateStudents()
+        this.updateStudents() // will method make request the server and new list of students/ data
       })
       .catch( err => {
         console.log('Error fetching student list', err)
@@ -88,7 +88,7 @@ export default {
 
 <style>
 
-@import "https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css";
+@import "https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" 
 
 /* Use a regular CSS class, or a bootstrap class to the h1 to add spacing */
 /* h1 {
