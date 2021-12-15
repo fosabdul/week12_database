@@ -54,7 +54,7 @@ export default {
     },
     
     methods: {  // recheck
-        arrivedOrLeft(student, present) {  // App.vue is incharge when the student arrive or leave,# from ST-table and Stable data is coming from ST-Row
+        arrivedOrLeft(student, present, ) {  // App.vue is incharge when the student arrive or leave,# from ST-table and Stable data is coming from ST-Row
             this.$emit('student-arrived-or-left', student, present)  // the parent can handle the event that happened     
         },
         deleteStudent(student) {

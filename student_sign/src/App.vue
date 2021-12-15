@@ -6,7 +6,7 @@
     <NewStudentForm v-on:student-added="newStudentAdded"></NewStudentForm>
     <StudentTable
       v-bind:students="students" 
-      v-on:student-present="studentArrivedOrLeft"
+      v-on:student-arrived-or-left="studentArrivedOrLeft"
       v-on:delete-student="studentDeleted">
     </StudentTable>
     <StudentMessage v-bind:student="mostRecentStudent"></StudentMessage>
