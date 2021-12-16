@@ -6,7 +6,7 @@ let router = express.Router()   // must match the request that is made
 
 router.get('/students', function(req, res, next){ // request student forces this function to run
     Student.findAll( {order: [ // all the student = findAll
-        'present',                                          // order by present
+        'name',                                          // order by present
         db.Sequelize.fn('lower', db.Sequelize.col('name'))  // and then by lowercase versions of names - a case-insensive sort
     ]} ).then( students => {
         return res.json(students)
